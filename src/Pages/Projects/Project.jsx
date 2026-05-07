@@ -1,10 +1,11 @@
-import { FaGithub, FaLink } from "react-icons/fa";
-import img1 from "../../assets/Bangladeshi-chef.png";
-import img2 from "../../assets/Educational-and-Learning.png";
-import img3 from "../../assets/Vite-React.png";
 
+import { FaGithub, FaLink } from "react-icons/fa";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+
+import img1 from "../../../src/assets/Bangladeshi-chef.png";
+import img2 from "../../../src/assets/Educational-and-Learning.png";
+import img3 from "../../../src/assets/Vite-React.png";
 
 const Projects = () => {
   return (

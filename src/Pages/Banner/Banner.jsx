@@ -44,18 +44,12 @@ const Banner = () => {
                     />
                 </div>
                 <p className="text-neutral max-w-xl mb-6 font-medium">
-                    As a MERN stack developer, I am committed to building high-quality web
-                    applications that meet the needs of my clients. With years of
-                    experience in full-stack web development, I specialize in using
-                    React.js, Next js, Typescript, MongoDB, Express.js, and Node.js to
-                    create scalable and robust web applications.
-                    {/* I am a Front-end Developer. I am very passionate to my work and
-          dedicated to explore New Tools And Technologies. */}
+                I am a Computer Science Engineering student with a strong interest in web development, specializing in MERN stack technologies. I have a solid foundation in HTML, CSS, and JavaScript, and I build responsive, user-friendly web applications. I have demonstrated leadership and community engagement as a Campus Hero Programming Hero, ICT Olympiad Bangladesh Campus Ambassador, and Bangladesh Scouts member. Currently, I serve as Deputy Finance Secretary at Tilpotro Foundation, contributing to financial management and organizational operations.
                 </p>
 
                 <div className="flex items-center">
                     <a
-                        href="https://drive.google.com/file/d/16beLkptqplJU-CVVd67APOpmkCvDUIsX/view"
+                        href="https://drive.google.com/file/d/1waAYfgmh08082HhmbwX5SZEii2s4dcNm/view?usp=drive_link"
                         target="blank"
                     >
                         <button className="bg-lime-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded flex items-center">
@@ -68,6 +62,7 @@ const Banner = () => {
                     </a>
 
                 </div>
+               
             </motion.div>
             <motion.div
                 className="w-full md:w-1/2"

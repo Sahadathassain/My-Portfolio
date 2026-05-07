@@ -22,8 +22,8 @@ export default function Navbar() {
 
   const navLinks = [
     { title: "Home", link: "/", icon: <FaHome /> },
-    { title: "About", link: "/about", icon: <RiFolderInfoFill /> },
-    { title: "Projects", link: "/projects", icon: <MdWork /> },
+    { title: "About", link: `/about`, icon: <RiFolderInfoFill /> },
+    { title: "Projects", link: `/projects`, icon: <MdWork /> },
     { title: "Contact", link: "/contact", icon: <RiContactsBook2Fill /> },
     { title: "Skill", link: "/skill", icon: <GiSkills /> },
   ];
@@ -82,7 +82,7 @@ export default function Navbar() {
 
             <a
               className="inline-block ml-4"
-              href="https://drive.google.com/file/d/16beLkptqplJU-CVVd67APOpmkCvDUIsX/view?usp=sharing"
+              href="https://drive.google.com/file/d/1waAYfgmh08082HhmbwX5SZEii2s4dcNm/view?usp=sharing"
               target="blank"
             >
               <button className="flex gap-2 text-lime-500">
