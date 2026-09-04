@@ -6,7 +6,7 @@ import {
   RiFolderInfoFill,
 } from "react-icons/ri";
 import { GiCrossMark } from "react-icons/gi";
-import { FaHome, FaDownload } from "react-icons/fa";
+import { FaHome,  } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
 import { GiSkills} from "react-icons/gi";
 import Drawer from "react-modern-drawer";
@@ -23,9 +23,11 @@ export default function Navbar() {
   const navLinks = [
     { title: "Home", link: "/", icon: <FaHome /> },
     { title: "About", link: `/about`, icon: <RiFolderInfoFill /> },
-    { title: "Projects", link: `/projects`, icon: <MdWork /> },
-    { title: "Contact", link: "/contact", icon: <RiContactsBook2Fill /> },
     { title: "Skill", link: "/skill", icon: <GiSkills /> },
+    { title: "Projects", link: `/projects`, icon: <MdWork /> },
+    { title: "Experience", link: `/experience`, icon: <MdWork /> },
+    { title: "Contact", link: "/contact", icon: <RiContactsBook2Fill /> },
+   
   ];
   const activeLink = ({ isActive }) => {
     return {
@@ -80,18 +82,7 @@ export default function Navbar() {
               </li>
             ))}
 
-            <a
-              className="inline-block ml-4"
-              href="https://drive.google.com/file/d/1waAYfgmh08082HhmbwX5SZEii2s4dcNm/view?usp=sharing"
-              target="blank"
-            >
-              <button className="flex gap-2 text-lime-500">
-                <span>Resume</span>
-                <span>
-                  <FaDownload />
-                </span>
-              </button>
-            </a>
+            /
           </ul>
           <div className="block lg:hidden">
             <button onClick={toggleDrawer} className="btn btn-ghost text-white">

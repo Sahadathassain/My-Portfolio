@@ -1,111 +1,155 @@
-
 import { motion } from "framer-motion";
-// import img from "../../assets/Untitled design.png"
-import { FaDownload } from "react-icons/fa";
-import { TypeAnimation } from "react-type-animation";
+import { FaArrowRight } from "react-icons/fa";
 
-
+import aboutImg from "../../assets/about.png";
 
 const About = () => {
   return (
-    <div className="parent   py-20 px-20 bg-[#141414] text-slate-300">
-      
+    <section
+      id="about"
+      className="py-24 px-6 md:px-20 bg-[#141414] text-slate-300"
+    >
+      <div className="max-w-6xl mx-auto">
+
+        {/* SECTION TITLE */}
         <motion.div
-        
-          className="mb-12"
-          initial={{ y: -200, opacity: 0 }}
-          animate={{
-            y: 0,
-            opacity: 1,
-            transition: { duration: 1, type: "spring" },
-          }}
+          className="mb-16"
+          initial={{ y: -50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
-         
-          <h1 className="text-4xl font-semibold drop-shadow-md text-center">
-            About <span className="text-primary">Me</span>
+          <p className="text-lime-500 text-sm uppercase tracking-[0.3em] text-center mb-3">
+            Get to know me
+          </p>
+
+          <h1 className="text-4xl md:text-5xl font-semibold text-center text-white">
+            About <span className="text-lime-500">Me</span>
           </h1>
-         
         </motion.div>
-        <div className="grid grid-cols-1  md:grid-cols-2 gap-8">
+
+        {/* CONTENT */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+
+          {/* IMAGE */}
           <motion.div
-            initial={{ x: -200, opacity: 0 }}
-            animate={{
-              x: 0,
-              opacity: 1,
-              transition: { duration: 1, delay: 1.25 },
-            }}
+            className="flex justify-center"
+            initial={{ x: -80, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
-            <img src="/src/assets/file_00000000150871fa97278f9f3d8117cf_imgupscaler.ai_V1(Fast)_2K.png" alt="Sahadat hossain" className="mx-auto  h-96 w-96 md:rounded-full rounded-full my-auto" />
-          </motion.div>
-          <motion.div
-            className=""
-            initial={{ x: 200, opacity: 0 }}
-            animate={{
-              x: 0,
-              opacity: 1,
-              transition: { duration: 1, delay: 1.25 },
-            }}
-          >
-            <h1 className="text-4xl font-semibold mb-0">Sahadat Hossain</h1>
-            <div className="my-2">
-              <TypeAnimation
-                className="text-2xl text-lime-500 font-bold"
-                cursor={true}
-                sequence={[
-                  " I Am Social Worker",
-                  2000,
-                  " React Developer",
-                  2000,
-                  " Front-end Developer",
-                  2000,
-                ]}
-                wrapper="div"
-                repeat={Infinity}
+            <div className="relative">
+
+              {/* Decorative border */}
+              <div className="absolute -inset-3 border border-lime-500/30 rounded-full" />
+
+              <img
+                src={aboutImg}
+                alt="Sahadat Hossain"
+                className="relative h-72 w-72 md:h-96 md:w-96 rounded-full object-cover"
               />
-            </div>
-            <p className="text-neutral font-medium">
-            I am a Computer Science Engineering student with a strong interest in web development, specializing in MERN stack technologies. I have a solid foundation in HTML, CSS, and JavaScript, and I build responsive, user-friendly web applications
-              
-            </p>
-            <br />
-            <p className="text-neutral font-medium">
-            I have demonstrated leadership and community engagement as a Campus Hero Programming Hero, ICT Olympiad Bangladesh Campus Ambassador, and Bangladesh Scouts member. Currently, I serve as Deputy Finance Secretary at Tilpotro Foundation, contributing to financial management and organizational operations.
-              
-            </p>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-4 mt-4">
-              <h2 className="font-medium">
-                <span className="mr-4 text-lime-500">Name: </span>Sahadat Hossain
-              </h2>
-              <h2 className="font-medium">
-                <span className="mr-4 text-lime-500">Phone: </span>+880
-                1859037929
-              </h2>
-              <h2 className="font-medium">
-                <span className="mr-4 text-lime-500">Email: </span>
-                sahadathossain164109@gmail.com
-              </h2>
-              <h2 className="font-medium">
-                <span className="mr-4 text-lime-500">Address: </span>Comilla , Bangladesh
-              </h2>
-              <a
-                        href="https://drive.google.com/file/d/1waAYfgmh08082HhmbwX5SZEii2s4dcNm/view?usp=sharing"
-                        target="blank"
-                    >
-                        <button className="bg-lime-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded flex items-center">
-                            <span className="mr-2">
-                                <FaDownload />
-                            </span>
-                            <span>See Resume</span>
-                        </button>
 
-                    </a>
             </div>
           </motion.div>
-        
-      </div>
 
-     
-    </div>
+          {/* TEXT */}
+          <motion.div
+            initial={{ x: 80, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+
+            <p className="text-lime-500 text-sm uppercase tracking-widest mb-3">
+              Digital Creative & Project Coordinator
+            </p>
+
+            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
+              I connect creativity,
+              <br />
+              technology & ideas.
+            </h2>
+
+            <p className="text-gray-400 leading-7 mb-5">
+              I work at the intersection of creativity and technology,
+              developing digital experiences, creative projects, and ideas
+              that turn concepts into meaningful visual experiences.
+            </p>
+
+            <p className="text-gray-400 leading-7 mb-8">
+              Currently, I work as a Digital & Creative Project Coordinator
+              at Punto Frame Studio, where I contribute to social media,
+              content planning, creative project development, design
+              improvements, and new initiatives for the studio.
+            </p>
+
+            {/* CAPABILITIES */}
+            <div className="flex flex-wrap gap-3 mb-8">
+              <span className="px-4 py-2 rounded-full border border-white/10 text-sm">
+                Creative Direction
+              </span>
+
+              <span className="px-4 py-2 rounded-full border border-white/10 text-sm">
+                Digital Design
+              </span>
+
+              <span className="px-4 py-2 rounded-full border border-white/10 text-sm">
+                Social Media
+              </span>
+
+              <span className="px-4 py-2 rounded-full border border-white/10 text-sm">
+                Web Development
+              </span>
+            </div>
+
+            {/* PERSONAL INFO */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+
+              <div>
+                <p className="text-gray-500 text-sm">Based in</p>
+                <p className="text-white">Bangladesh</p>
+              </div>
+
+              <div>
+                <p className="text-gray-500 text-sm">Current Role</p>
+                <p className="text-white">
+                  Digital & Creative Coordinator
+                </p>
+              </div>
+
+              <div>
+                <p className="text-gray-500 text-sm">Focus</p>
+                <p className="text-white">
+                  Digital & Creative
+                </p>
+              </div>
+
+              <div>
+                <p className="text-gray-500 text-sm">Email</p>
+                <p className="text-white break-all">
+                  sahadathossain164109@gmail.com
+                </p>
+              </div>
+
+            </div>
+
+            {/* CTA */}
+            <a
+              href="https://drive.google.com/file/d/1VTSVFWpaiqeuJumUcMV1Wyx2HLl3za5b/view?usp=drive_link"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-3 bg-lime-500 hover:bg-lime-400 text-black font-semibold px-5 py-3 rounded transition-all duration-300"
+            >
+              View Resume
+              <FaArrowRight />
+            </a>
+
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
   );
 };
 

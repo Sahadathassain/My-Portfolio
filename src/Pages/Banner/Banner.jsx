@@ -1,78 +1,232 @@
-
-
 import { FaDownload } from "react-icons/fa";
-
-
 import { motion } from "framer-motion";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import coding from "../../assets/coding.json";
 import { TypeAnimation } from "react-type-animation";
 
-
 const Banner = () => {
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: coding,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice",
-        },
-    };
     return (
-        <div className="parent min-h-[90vh] flex flex-col-reverse lg:flex-row items-center justify-between py-20 px-20 bg-[#141414] text-slate-300">
-            <motion.div
-                initial={{ x: "-100vw" }}
-                animate={{ x: 0 }}
-                transition={{ duration: 1 }}
-            >
-                <h2 className="text-neutral text-xl font-medium text-slate-300">Hello, I am</h2>
-                <h1 className="text-4xl font-semibold mb-0 text-white" >Sahadat Hossain</h1>
-                <div className="my-4">
-                    <TypeAnimation
-                        className="text-2xl text-lime-500 font-bold"
-                        cursor={true}
-                        sequence={[
-                            "Mern-stack Developer",
-                            2000,
-                            " React Developer",
-                            2000,
-                            "Front-end Developer",
-                            2000,
-                        ]}
-                        wrapper="div"
-                        repeat={Infinity}
-                    />
-                </div>
-                <p className="text-neutral max-w-xl mb-6 font-medium">
-                I am a Computer Science Engineering student with a strong interest in web development, specializing in MERN stack technologies. I have a solid foundation in HTML, CSS, and JavaScript, and I build responsive, user-friendly web applications. I have demonstrated leadership and community engagement as a Campus Hero Programming Hero, ICT Olympiad Bangladesh Campus Ambassador, and Bangladesh Scouts member. Currently, I serve as Deputy Finance Secretary at Tilpotro Foundation, contributing to financial management and organizational operations.
-                </p>
+        <section
+            id="home"
+            className="
+                min-h-[90vh]
+                flex
+                items-center
+                bg-[#141414]
+                text-slate-300
+                px-6
+                md:px-12
+                lg:px-20
+                xl:px-28
+                py-16
+            "
+        >
+            <div className="max-w-6xl w-full mx-auto">
 
-                <div className="flex items-center">
-                    <a
-                        href="https://drive.google.com/file/d/1waAYfgmh08082HhmbwX5SZEii2s4dcNm/view?usp=drive_link"
-                        target="blank"
+                <div className="grid lg:grid-cols-2 items-center gap-12 lg:gap-20">
+
+                    {/* =================================
+                        LEFT
+                    ================================= */}
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 25 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                            duration: 0.8,
+                            ease: "easeOut",
+                        }}
                     >
-                        <button className="bg-lime-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded flex items-center">
-                            <span className="mr-2">
-                                <FaDownload />
-                            </span>
-                            <span>My Resume</span>
-                        </button>
 
-                    </a>
+                        {/* Small Intro */}
+
+                        <p className="text-sm text-gray-500 mb-5">
+                            Hello, I&apos;m
+                        </p>
+
+                        {/* NAME */}
+
+                        <h1
+                            className="
+                                text-5xl
+                                sm:text-6xl
+                                md:text-6xl
+                                lg:text-[64px]
+                                font-medium
+                                tracking-[-0.03em]
+                                leading-none
+                                text-white
+                            "
+                        >
+                            Sahadat Hossain
+                        </h1>
+
+                        {/* Minimal Line */}
+
+                        <div className="w-12 h-[2px] bg-lime-500 mt-6 mb-7"></div>
+
+                        {/* ROLE */}
+
+                        <div className="min-h-[32px]">
+                            <TypeAnimation
+                                className="
+                                    text-lg
+                                    md:text-xl
+                                    text-gray-300
+                                    font-normal
+                                "
+                                sequence={[
+                                
+
+                                    "Creative Project Coordinator",
+                                    2400,
+
+                                    "Front-end Developer",
+                                    2400,
+                                ]}
+                                wrapper="div"
+                                repeat={Infinity}
+                                cursor
+                            />
+                        </div>
+
+                        {/* DESCRIPTION */}
+
+                        <p
+                            className="
+                                max-w-lg
+                                mt-6
+                                text-sm
+                                md:text-base
+                                leading-7
+                                text-gray-500
+                            "
+                        >
+                            I work across creative projects, digital design,
+                            social media, and front-end development to turn
+                            ideas into thoughtful digital experiences.
+                        </p>
+
+                        {/* CURRENT ROLE */}
+
+                        <p className="mt-5 text-xs text-gray-600">
+                            Currently with{" "}
+                            <span className="text-gray-400">
+                                Punto Frame Studio
+                            </span>
+                        </p>
+
+                        {/* ACTIONS */}
+
+                        <div className="flex items-center gap-6 mt-8">
+
+                            <a
+                                href="https://drive.google.com/file/d/1VTSVFWpaiqeuJumUcMV1Wyx2HLl3za5b/view?usp=sharing"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="
+                                    inline-flex
+                                    items-center
+                                    gap-2
+                                    bg-lime-500
+                                    hover:bg-lime-400
+                                    text-black
+                                    text-sm
+                                    font-medium
+                                    px-5
+                                    py-2.5
+                                    rounded-full
+                                    transition-all
+                                    duration-300
+                                "
+                            >
+                                <FaDownload className="text-xs" />
+                                Resume
+                            </a>
+
+                            <a
+                                href="#projects"
+                                className="
+                                    text-sm
+                                    text-gray-500
+                                    hover:text-lime-500
+                                    transition-colors
+                                "
+                            >
+                                View work →
+                            </a>
+
+                        </div>
+
+                    </motion.div>
+
+
+                    {/* =================================
+                        RIGHT — LOTTIE
+                    ================================= */}
+
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{
+                            duration: 1,
+                            delay: 0.15,
+                            ease: "easeOut",
+                        }}
+                        className="
+                            flex
+                            justify-center
+                            lg:justify-end
+                        "
+                    >
+
+                        <div className="w-full max-w-[400px]">
+
+                            <Lottie
+                                animationData={coding}
+                                loop={true}
+                            />
+
+                        </div>
+
+                    </motion.div>
 
                 </div>
-               
-            </motion.div>
-            <motion.div
-                className="w-full md:w-1/2"
-                initial={{ x: "100vw" }}
-                animate={{ x: 0 }}
-                transition={{ duration: 1 }}
-            >
-                <Lottie options={defaultOptions}  height="90%" width="90%" />
-            </motion.div>
-        </div>
+
+                {/* =================================
+                    BOTTOM
+                ================================= */}
+
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                        duration: 1,
+                        delay: 0.8,
+                    }}
+                    className="
+                        mt-16
+                        pt-5
+                        border-t
+                        border-white/5
+                        flex
+                        justify-between
+                        items-center
+                    "
+                >
+
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-gray-700">
+                        Digital · Creative · Web
+                    </span>
+
+                    <span className="text-[10px] text-gray-700">
+                        01
+                    </span>
+
+                </motion.div>
+
+            </div>
+        </section>
     );
 };
 
