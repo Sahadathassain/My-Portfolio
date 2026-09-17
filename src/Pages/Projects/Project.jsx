@@ -3,10 +3,9 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import PropTypes from "prop-types";
 import PuntoFrameImg1 from "../../assets/punto-frame-studio.png";
-import img1 from "../../assets/Bangladeshi-chef.png";
+import img1 from "../../assets/Bangladeshi-chef-09-17-2026_03_28_PM.png";
 import img2 from "../../assets/Educational-and-Learning.png";
 import img3 from "../../assets/Vite-React.png";
-
 const featuredProject = {
   title: "Punto Frame Studio",
   category: "Digital Agency · Creative & Digital",
@@ -33,7 +32,7 @@ const projects = [
     client: "https://github.com/Sahadathassain/assignment-recipe-chef-client",
     server:
       "https://github.com/Sahadathassain/assignment-recipe-chef-server",
-    live: "https://assignment-recipe-chef.web.app/",
+    live: "https://assignment-recipe-chef-client.vercel.app/",
   },
   {
     title: "Educational & Learning",
