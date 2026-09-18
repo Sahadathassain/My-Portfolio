@@ -6,16 +6,15 @@ import {
   RiFolderInfoFill,
 } from "react-icons/ri";
 import { GiCrossMark } from "react-icons/gi";
-import { FaHome,  } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
-import { GiSkills} from "react-icons/gi";
+import { GiSkills } from "react-icons/gi";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 
-
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
+
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
@@ -27,8 +26,8 @@ export default function Navbar() {
     { title: "Projects", link: `/projects`, icon: <MdWork /> },
     { title: "Experience", link: `/experience`, icon: <MdWork /> },
     { title: "Contact", link: "/contact", icon: <RiContactsBook2Fill /> },
-   
   ];
+
   const activeLink = ({ isActive }) => {
     return {
       fontWeight: 500,
@@ -39,6 +38,7 @@ export default function Navbar() {
   // Show Navbar on Scroll UP
   const [show, setShow] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+
   useEffect(() => {
     const controlNavbar = () => {
       if (typeof window !== "undefined") {
@@ -47,11 +47,14 @@ export default function Navbar() {
         } else {
           setShow(false);
         }
+
         setLastScrollY(window.scrollY);
       }
     };
+
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", controlNavbar);
+
       return () => {
         window.removeEventListener("scroll", controlNavbar);
       };
@@ -59,15 +62,20 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   return (
-    <div className={`visible ${show && "nav-hidden"} fixed top-0 left-0 right-0 z-50 shadow-lg bg-[#313131]`}>
-
-    
-      <div className="w-full flex items-center justify-between px-3 md:px-24 py-3">
+    <div
+      className={`visible ${
+        show && "nav-hidden"
+      } fixed top-0 left-0 right-0 z-50 shadow-lg bg-[#313131]`}
+    >
+      <div className="w-full flex items-center justify-between px-3 sm:px-5 md:px-24 py-3">
         <div>
           <Link to="/">
-            <h1 className="text-2xl text-primary font-lobster text-lime-500">Sahadat Hossain</h1>
+            <h1 className="text-xl sm:text-2xl text-primary font-lobster text-lime-500 whitespace-nowrap">
+              Sahadat Hossain
+            </h1>
           </Link>
         </div>
+
         <div>
           <ul className="lg:flex items-center hidden">
             {navLinks.map((navItem) => (
@@ -81,27 +89,38 @@ export default function Navbar() {
                 </NavLink>
               </li>
             ))}
-
-            /
           </ul>
+
+          {/* Mobile Menu */}
           <div className="block lg:hidden">
-            <button onClick={toggleDrawer} className="btn btn-ghost text-white">
-              <RiMenu3Fill></RiMenu3Fill>
+            <button
+              onClick={toggleDrawer}
+              className="btn btn-ghost text-white p-2 min-h-0 h-auto"
+              aria-label="Open menu"
+            >
+              <RiMenu3Fill className="text-2xl" />
             </button>
+
             <Drawer
               open={isOpen}
               onClose={toggleDrawer}
               direction="right"
-              style={{ backgroundColor: "#212121" }}
+              size="85vw"
+              style={{
+                backgroundColor: "#212121",
+                maxWidth: "320px",
+                width: "85vw",
+              }}
               className="bla bla bla flex flex-col justify-between pb-4"
             >
-              <ul className="">
+              <ul className="w-full">
                 <li className="mt-6 mb-10 ml-4">
                   <GiCrossMark
-                    className="cursor-pointer hover:text-primary duration-300"
+                    className="cursor-pointer hover:text-primary duration-300 text-xl"
                     onClick={() => setIsOpen(!isOpen)}
-                  ></GiCrossMark>
+                  />
                 </li>
+
                 {navLinks.map((navItem) => (
                   <li
                     className="m-4"
@@ -111,16 +130,17 @@ export default function Navbar() {
                     <NavLink
                       to={navItem.link}
                       style={activeLink}
-                      className="flex items-center text-white hover:text-primary duration-300"
+                      className="flex items-center text-white hover:text-primary duration-300 py-2"
                     >
-                      <span className="mr-3">{navItem.icon}</span>
+                      <span className="mr-3 text-lg">
+                        {navItem.icon}
+                      </span>
+
                       <span>{navItem.title}</span>
                     </NavLink>
                   </li>
                 ))}
-                
               </ul>
-            
             </Drawer>
           </div>
         </div>

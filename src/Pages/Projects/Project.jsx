@@ -2,10 +2,12 @@ import { FaGithub, FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import PropTypes from "prop-types";
+
 import PuntoFrameImg1 from "../../assets/punto-frame-studio.png";
 import img1 from "../../assets/Bangladeshi-chef-09-17-2026_03_28_PM.png";
-import img2 from "../../assets/Educational-and-Learning.png";
+import img2 from "../../assets/Educational-and-Learning-09-17-2026_10_54_PM.png";
 import img3 from "../../assets/Vite-React.png";
+
 const featuredProject = {
   title: "Punto Frame Studio",
   category: "Digital Agency · Creative & Digital",
@@ -29,7 +31,8 @@ const projects = [
     description:
       "A recipe-focused web application designed to explore Bangladeshi cuisine and culinary content.",
     image: img1,
-    client: "https://github.com/Sahadathassain/assignment-recipe-chef-client",
+    client:
+      "https://github.com/Sahadathassain/assignment-recipe-chef-client",
     server:
       "https://github.com/Sahadathassain/assignment-recipe-chef-server",
     live: "https://assignment-recipe-chef-client.vercel.app/",
@@ -44,7 +47,7 @@ const projects = [
       "https://github.com/Sahadathassain/educational-and-Learning-clint",
     server:
       "https://github.com/Sahadathassain/Educational-and-Learning-server",
-    live: "https://educational-and-learning.web.app/",
+    live: "https://educational-and-learning-clint.vercel.app/",
   },
   {
     title: "Sports Academy",
@@ -52,32 +55,111 @@ const projects = [
     description:
       "A sports academy website with a structured interface for presenting academy information and activities.",
     image: img3,
-    client: "https://github.com/Sahadathassain/Sports-academy-client",
-    server: "https://github.com/Sahadathassain/Sports-academy-server",
+    client:
+      "https://github.com/Sahadathassain/Sports-academy-client",
+    server:
+      "https://github.com/Sahadathassain/Sports-academy-server",
     live: "https://sports-academy-fc9b3.web.app/",
   },
 ];
 
 /* ----------------------------------------------------
-   Small Project Image
+   Scrollable Project Image
 ---------------------------------------------------- */
 
 const ProjectImage = ({ src, alt }) => {
-    return (
-        <div className="h-[220px] overflow-hidden bg-[#111] rounded-xl">
-            <LazyLoadImage
-                src={src}
-                alt={alt}
-                effect="blur"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-            />
-        </div>
-    );
+  return (
+    <div
+      className="
+        group/image
+        relative
+        h-[220px]
+        overflow-y-auto
+        overflow-x-hidden
+        rounded-xl
+        bg-white
+        scroll-smooth
+      "
+      style={{
+        scrollbarWidth: "thin",
+        scrollbarColor: "#525252 transparent",
+      }}
+    >
+      <LazyLoadImage
+        src={src}
+        alt={alt}
+        effect="blur"
+        className="
+          block
+          h-auto
+          w-full
+          transition-transform
+          duration-500
+        "
+      />
+
+      {/* Top Fade */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-x-0
+          top-0
+          h-10
+          bg-gradient-to-b
+          from-black/20
+          to-transparent
+        "
+      />
+
+      {/* Bottom Fade */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-x-0
+          bottom-0
+          h-14
+          bg-gradient-to-t
+          from-black/25
+          to-transparent
+        "
+      />
+
+      {/* Scroll Indicator */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          bottom-3
+          left-1/2
+          -translate-x-1/2
+          rounded-full
+          border
+          border-white/20
+          bg-black/60
+          px-3
+          py-1
+          text-[10px]
+          font-medium
+          uppercase
+          tracking-wider
+          text-white/80
+          opacity-0
+          transition-opacity
+          duration-300
+          group-hover/image:opacity-100
+        "
+      >
+        Scroll
+      </div>
+    </div>
+  );
 };
 
 ProjectImage.propTypes = {
-    src: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 };
 
 /* ----------------------------------------------------
@@ -86,17 +168,17 @@ ProjectImage.propTypes = {
 
 const WebsitePreview = () => {
   return (
-    <div className="relative bg-[#090909] p-3 md:p-4 rounded-2xl border border-white/10">
+    <div className="relative rounded-2xl border border-white/10 bg-[#090909] p-3 md:p-4">
       {/* Browser Top Bar */}
-      <div className="flex items-center gap-2 bg-[#1b1b1b] px-4 py-3 rounded-t-xl border-b border-white/5">
+      <div className="flex items-center gap-2 rounded-t-xl border-b border-white/5 bg-[#1b1b1b] px-4 py-3">
         {/* Browser Dots */}
-        <span className="w-2.5 h-2.5 rounded-full bg-red-400/70"></span>
-        <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/70"></span>
-        <span className="w-2.5 h-2.5 rounded-full bg-green-400/70"></span>
+        <span className="h-2.5 w-2.5 rounded-full bg-red-400/70"></span>
+        <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70"></span>
+        <span className="h-2.5 w-2.5 rounded-full bg-green-400/70"></span>
 
         {/* Address Bar */}
-        <div className="ml-3 flex-1 bg-[#111] rounded-md px-3 py-1.5">
-          <p className="text-[11px] md:text-xs text-gray-500 truncate">
+        <div className="ml-3 flex-1 rounded-md bg-[#111] px-3 py-1.5">
+          <p className="truncate text-[11px] text-gray-500 md:text-xs">
             puntoframe.studio/en
           </p>
         </div>
@@ -106,24 +188,25 @@ const WebsitePreview = () => {
       <div
         className="
           h-[240px]
+          overflow-y-auto
+          overflow-x-hidden
+          scroll-smooth
+          rounded-b-xl
+          bg-white
           sm:h-[270px]
           md:h-[300px]
           lg:h-[320px]
-          overflow-y-auto
-          overflow-x-hidden
-          bg-white
-          rounded-b-xl
-          scroll-smooth
         "
         style={{
           scrollbarWidth: "thin",
+          scrollbarColor: "#525252 transparent",
         }}
       >
         <LazyLoadImage
           src={featuredProject.image}
           alt="Punto Frame Studio website"
           effect="blur"
-          className="w-full h-auto block"
+          className="block h-auto w-full"
         />
       </div>
     </div>
@@ -138,23 +221,23 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="px-5 md:px-10 lg:px-20 xl:px-28 bg-[#141414] text-white py-20"
+      className="bg-[#141414] px-5 py-20 text-white md:px-10 lg:px-20 xl:px-28"
     >
       {/* ------------------------------------------------
           Section Heading
       ------------------------------------------------ */}
 
-      <div className="max-w-7xl mx-auto mb-14">
-        <p className="text-primary text-sm tracking-[0.25em] uppercase mb-4">
+      <div className="mx-auto mb-14 max-w-7xl">
+        <p className="mb-4 text-sm uppercase tracking-[0.25em] text-primary">
           Selected Work
         </p>
 
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <h2 className="text-4xl font-semibold leading-tight md:text-5xl lg:text-6xl">
             Projects<span className="text-primary">.</span>
           </h2>
 
-          <p className="max-w-md text-gray-400 text-sm md:text-base leading-relaxed">
+          <p className="max-w-md text-sm leading-relaxed text-gray-400 md:text-base">
             A selection of digital experiences, creative projects, and web
             development work.
           </p>
@@ -165,8 +248,8 @@ const Projects = () => {
           Featured Punto Frame Project
       ------------------------------------------------ */}
 
-      <div className="max-w-7xl mx-auto mb-20">
-        <div className="grid lg:grid-cols-[1.35fr_0.65fr] gap-8 lg:gap-12 items-center">
+      <div className="mx-auto mb-20 max-w-7xl">
+        <div className="grid items-center gap-8 lg:grid-cols-[1.35fr_0.65fr] lg:gap-12">
           {/* Website Preview */}
 
           <div className="group">
@@ -176,20 +259,20 @@ const Projects = () => {
           {/* Project Information */}
 
           <div className="lg:pl-4">
-            <p className="text-primary text-xs uppercase tracking-[0.2em] mb-4">
+            <p className="mb-4 text-xs uppercase tracking-[0.2em] text-primary">
               Featured Project
             </p>
 
-            <h3 className="text-3xl md:text-4xl font-semibold mb-3">
+            <h3 className="mb-3 text-3xl font-semibold md:text-4xl">
               {featuredProject.title}
             </h3>
 
-            <p className="text-sm text-gray-500 mb-6">
+            <p className="mb-6 text-sm text-gray-500">
               {featuredProject.category}
             </p>
 
-            <div className="border-l border-primary/40 pl-4 mb-6">
-              <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">
+            <div className="mb-6 border-l border-primary/40 pl-4">
+              <p className="mb-1 text-xs uppercase tracking-wider text-gray-500">
                 My Role
               </p>
 
@@ -198,17 +281,26 @@ const Projects = () => {
               </p>
             </div>
 
-            <p className="text-gray-400 leading-7 text-sm md:text-base mb-7">
+            <p className="mb-7 text-sm leading-7 text-gray-400 md:text-base">
               {featuredProject.description}
             </p>
 
             {/* Tags */}
 
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="mb-8 flex flex-wrap gap-2">
               {featuredProject.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1.5 text-xs border border-white/10 rounded-full text-gray-400 bg-white/[0.02]"
+                  className="
+                    rounded-full
+                    border
+                    border-white/10
+                    bg-white/[0.02]
+                    px-3
+                    py-1.5
+                    text-xs
+                    text-gray-400
+                  "
                 >
                   {tag}
                 </span>
@@ -225,16 +317,16 @@ const Projects = () => {
                 inline-flex
                 items-center
                 gap-3
-                px-5
-                py-3
                 rounded-full
                 bg-lime-500
-                text-black
+                px-5
+                py-3
                 text-sm
                 font-medium
-                hover:bg-white
+                text-black
                 transition-all
                 duration-300
+                hover:bg-white
               "
             >
               Visit Website
@@ -248,40 +340,42 @@ const Projects = () => {
           Other Projects
       ------------------------------------------------ */}
 
-      <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between mb-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-8 flex items-center justify-between">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-gray-500 mb-2">
+            <p className="mb-2 text-xs uppercase tracking-[0.2em] text-gray-500">
               More Work
             </p>
 
-            <h3 className="text-2xl md:text-3xl font-semibold">
+            <h3 className="text-2xl font-semibold md:text-3xl">
               Development Projects
             </h3>
           </div>
 
-          <span className="hidden sm:block text-xs text-gray-600">
+          <span className="hidden text-xs text-gray-600 sm:block">
             03 Projects
           </span>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Project Cards */}
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <div
               key={project.title}
               className="
                 group
-                bg-[#191919]
+                overflow-hidden
+                rounded-2xl
                 border
                 border-white/5
-                rounded-2xl
-                overflow-hidden
-                hover:border-primary/20
+                bg-[#191919]
                 transition-all
                 duration-500
+                hover:border-primary/20
               "
             >
-              {/* Image */}
+              {/* Scrollable Image */}
 
               <div className="p-3">
                 <ProjectImage
@@ -293,8 +387,8 @@ const Projects = () => {
               {/* Content */}
 
               <div className="px-5 pb-5 pt-2">
-                <div className="flex items-center justify-between gap-3 mb-3">
-                  <p className="text-xs text-primary uppercase tracking-wider">
+                <div className="mb-3 flex items-center justify-between gap-3">
+                  <p className="text-xs uppercase tracking-wider text-primary">
                     {project.category}
                   </p>
 
@@ -303,17 +397,19 @@ const Projects = () => {
                   </span>
                 </div>
 
-                <h4 className="text-xl font-semibold mb-3">
+                <h4 className="mb-3 text-xl font-semibold">
                   {project.title}
                 </h4>
 
-                <p className="text-sm text-gray-500 leading-6 mb-5">
+                <p className="mb-5 text-sm leading-6 text-gray-500">
                   {project.description}
                 </p>
 
                 {/* Links */}
 
                 <div className="flex flex-wrap gap-2">
+                  {/* Client */}
+
                   <a
                     href={project.client}
                     target="_blank"
@@ -322,20 +418,22 @@ const Projects = () => {
                       inline-flex
                       items-center
                       gap-2
-                      px-3
-                      py-2
                       rounded-lg
                       bg-white/5
+                      px-3
+                      py-2
                       text-xs
                       text-gray-400
+                      transition-all
                       hover:bg-primary
                       hover:text-black
-                      transition-all
                     "
                   >
                     <FaGithub />
                     Client
                   </a>
+
+                  {/* Server */}
 
                   <a
                     href={project.server}
@@ -345,20 +443,22 @@ const Projects = () => {
                       inline-flex
                       items-center
                       gap-2
-                      px-3
-                      py-2
                       rounded-lg
                       bg-white/5
+                      px-3
+                      py-2
                       text-xs
                       text-gray-400
+                      transition-all
                       hover:bg-primary
                       hover:text-black
-                      transition-all
                     "
                   >
                     <FaGithub />
                     Server
                   </a>
+
+                  {/* Live */}
 
                   <a
                     href={project.live}
@@ -368,15 +468,15 @@ const Projects = () => {
                       inline-flex
                       items-center
                       gap-2
-                      px-3
-                      py-2
                       rounded-lg
                       bg-white/5
+                      px-3
+                      py-2
                       text-xs
                       text-gray-400
+                      transition-all
                       hover:bg-primary
                       hover:text-black
-                      transition-all
                     "
                   >
                     <FaArrowUpRightFromSquare />
@@ -393,14 +493,14 @@ const Projects = () => {
           Bottom CTA
       ------------------------------------------------ */}
 
-      <div className="max-w-7xl mx-auto mt-20 pt-10 border-t border-white/5">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div className="mx-auto mt-20 max-w-7xl border-t border-white/5 pt-10">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="text-gray-500 text-sm mb-2">
+            <p className="mb-2 text-sm text-gray-500">
               Have an idea in mind?
             </p>
 
-            <h3 className="text-2xl md:text-3xl font-semibold">
+            <h3 className="text-2xl font-semibold md:text-3xl">
               Let&apos;s create something meaningful
               <span className="text-primary">.</span>
             </h3>
@@ -413,17 +513,17 @@ const Projects = () => {
               items-center
               justify-center
               gap-2
-              px-6
-              py-3
               rounded-full
               border
               border-white/10
+              px-6
+              py-3
               text-sm
               text-gray-300
+              transition-all
+              hover:border-primary
               hover:bg-primary
               hover:text-black
-              hover:border-primary
-              transition-all
             "
           >
             Start a Conversation
