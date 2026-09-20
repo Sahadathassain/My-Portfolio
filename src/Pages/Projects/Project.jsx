@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import PuntoFrameImg1 from "../../assets/punto-frame-studio.png";
 import img1 from "../../assets/Bangladeshi-chef-09-17-2026_03_28_PM.png";
 import img2 from "../../assets/Educational-and-Learning-09-17-2026_10_54_PM.png";
-import img3 from "../../assets/Vite-React.png";
+import img3 from "../../assets/Sports-Academy-09-20-2026_04_32_PM.png";
 
 const featuredProject = {
   title: "Punto Frame Studio",
@@ -59,7 +59,7 @@ const projects = [
       "https://github.com/Sahadathassain/Sports-academy-client",
     server:
       "https://github.com/Sahadathassain/Sports-academy-server",
-    live: "https://sports-academy-fc9b3.web.app/",
+    live: "https://sports-academy-client-rosy.vercel.app/",
   },
 ];
 
